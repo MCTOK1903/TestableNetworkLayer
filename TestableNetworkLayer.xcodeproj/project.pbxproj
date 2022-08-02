@@ -9,25 +9,59 @@
 /* Begin PBXBuildFile section */
 		007B60A02899829A00FC94BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B609F2899829A00FC94BF /* AppDelegate.swift */; };
 		007B60A22899829A00FC94BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60A12899829A00FC94BF /* SceneDelegate.swift */; };
-		007B60A42899829A00FC94BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60A32899829A00FC94BF /* ViewController.swift */; };
 		007B60A72899829A00FC94BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007B60A52899829A00FC94BF /* Main.storyboard */; };
 		007B60A92899829B00FC94BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B60A82899829B00FC94BF /* Assets.xcassets */; };
 		007B60AC2899829B00FC94BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007B60AA2899829B00FC94BF /* LaunchScreen.storyboard */; };
+		007B60C52899831A00FC94BF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60C42899831A00FC94BF /* HttpClient.swift */; };
+		007B60C8289985FE00FC94BF /* CatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60C7289985FE00FC94BF /* CatModel.swift */; };
+		007B60CA2899868200FC94BF /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60C92899868200FC94BF /* CatViewController.swift */; };
+		007B60CD289986B300FC94BF /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60CC289986B300FC94BF /* CatViewModel.swift */; };
+		007B60FB28998D0E00FC94BF /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60FA28998D0E00FC94BF /* Mockable.swift */; };
+		007B60FD28998D3700FC94BF /* CatResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 007B60FC28998D3700FC94BF /* CatResponse.json */; };
+		007B60FF28998D9500FC94BF /* MockHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60FE28998D9500FC94BF /* MockHttpClient.swift */; };
+		007B6103289990CD00FC94BF /* CatViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B6102289990CD00FC94BF /* CatViewModelTest.swift */; };
+		007B6106289997B900FC94BF /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B6105289997B900FC94BF /* MockUrlProtocol.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		007B60F428998CFC00FC94BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 007B60942899829900FC94BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 007B609B2899829A00FC94BF;
+			remoteInfo = TestableNetworkLayer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		007B609C2899829A00FC94BF /* TestableNetworkLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableNetworkLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007B609F2899829A00FC94BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007B60A12899829A00FC94BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		007B60A32899829A00FC94BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		007B60A62899829A00FC94BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		007B60A82899829B00FC94BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		007B60AB2899829B00FC94BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		007B60AD2899829B00FC94BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		007B60C42899831A00FC94BF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		007B60C7289985FE00FC94BF /* CatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModel.swift; sourceTree = "<group>"; };
+		007B60C92899868200FC94BF /* CatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
+		007B60CC289986B300FC94BF /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
+		007B60F028998CFC00FC94BF /* TestableNetworkLayerTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableNetworkLayerTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		007B60FA28998D0E00FC94BF /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		007B60FC28998D3700FC94BF /* CatResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CatResponse.json; sourceTree = "<group>"; };
+		007B60FE28998D9500FC94BF /* MockHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHttpClient.swift; sourceTree = "<group>"; };
+		007B6102289990CD00FC94BF /* CatViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModelTest.swift; sourceTree = "<group>"; };
+		007B6105289997B900FC94BF /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		007B60992899829A00FC94BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007B60ED28998CFC00FC94BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				007B609E2899829A00FC94BF /* TestableNetworkLayer */,
+				007B60F128998CFC00FC94BF /* TestableNetworkLayerTest */,
 				007B609D2899829A00FC94BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				007B609C2899829A00FC94BF /* TestableNetworkLayer.app */,
+				007B60F028998CFC00FC94BF /* TestableNetworkLayerTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +92,110 @@
 		007B609E2899829A00FC94BF /* TestableNetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				007B609F2899829A00FC94BF /* AppDelegate.swift */,
-				007B60A12899829A00FC94BF /* SceneDelegate.swift */,
-				007B60A32899829A00FC94BF /* ViewController.swift */,
-				007B60A52899829A00FC94BF /* Main.storyboard */,
-				007B60A82899829B00FC94BF /* Assets.xcassets */,
-				007B60AA2899829B00FC94BF /* LaunchScreen.storyboard */,
+				007B60C3289982FB00FC94BF /* App */,
+				007B60C2289982EC00FC94BF /* View */,
+				007B60C1289982DC00FC94BF /* Resources */,
+				007B60C0289982D400FC94BF /* Network */,
 				007B60AD2899829B00FC94BF /* Info.plist */,
 			);
 			path = TestableNetworkLayer;
+			sourceTree = "<group>";
+		};
+		007B60C0289982D400FC94BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				007B60C6289985C200FC94BF /* Model */,
+				007B60C42899831A00FC94BF /* HttpClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		007B60C1289982DC00FC94BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				007B60A82899829B00FC94BF /* Assets.xcassets */,
+				007B60AA2899829B00FC94BF /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		007B60C2289982EC00FC94BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				007B60CB2899869C00FC94BF /* CatView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		007B60C3289982FB00FC94BF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				007B609F2899829A00FC94BF /* AppDelegate.swift */,
+				007B60A12899829A00FC94BF /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		007B60C6289985C200FC94BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				007B60C7289985FE00FC94BF /* CatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		007B60CB2899869C00FC94BF /* CatView */ = {
+			isa = PBXGroup;
+			children = (
+				007B60A52899829A00FC94BF /* Main.storyboard */,
+				007B60C92899868200FC94BF /* CatViewController.swift */,
+				007B60CC289986B300FC94BF /* CatViewModel.swift */,
+			);
+			path = CatView;
+			sourceTree = "<group>";
+		};
+		007B60F128998CFC00FC94BF /* TestableNetworkLayerTest */ = {
+			isa = PBXGroup;
+			children = (
+				007B61042899978900FC94BF /* NetworkTest */,
+				007B6101289990A600FC94BF /* ViewModelTest */,
+				007B61002899909B00FC94BF /* Network */,
+				007B60F928998D0000FC94BF /* MockData */,
+			);
+			path = TestableNetworkLayerTest;
+			sourceTree = "<group>";
+		};
+		007B60F928998D0000FC94BF /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				007B60FA28998D0E00FC94BF /* Mockable.swift */,
+				007B60FC28998D3700FC94BF /* CatResponse.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		007B61002899909B00FC94BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				007B60FE28998D9500FC94BF /* MockHttpClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		007B6101289990A600FC94BF /* ViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				007B6102289990CD00FC94BF /* CatViewModelTest.swift */,
+			);
+			path = ViewModelTest;
+			sourceTree = "<group>";
+		};
+		007B61042899978900FC94BF /* NetworkTest */ = {
+			isa = PBXGroup;
+			children = (
+				007B6105289997B900FC94BF /* MockUrlProtocol.swift */,
+			);
+			path = NetworkTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +218,24 @@
 			productReference = 007B609C2899829A00FC94BF /* TestableNetworkLayer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		007B60EF28998CFC00FC94BF /* TestableNetworkLayerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 007B60F628998CFC00FC94BF /* Build configuration list for PBXNativeTarget "TestableNetworkLayerTest" */;
+			buildPhases = (
+				007B60EC28998CFC00FC94BF /* Sources */,
+				007B60ED28998CFC00FC94BF /* Frameworks */,
+				007B60EE28998CFC00FC94BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				007B60F528998CFC00FC94BF /* PBXTargetDependency */,
+			);
+			name = TestableNetworkLayerTest;
+			productName = TestableNetworkLayerTest;
+			productReference = 007B60F028998CFC00FC94BF /* TestableNetworkLayerTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +248,10 @@
 				TargetAttributes = {
 					007B609B2899829A00FC94BF = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					007B60EF28998CFC00FC94BF = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 007B609B2899829A00FC94BF;
 					};
 				};
 			};
@@ -116,6 +269,7 @@
 			projectRoot = "";
 			targets = (
 				007B609B2899829A00FC94BF /* TestableNetworkLayer */,
+				007B60EF28998CFC00FC94BF /* TestableNetworkLayerTest */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +285,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		007B60EE28998CFC00FC94BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				007B60FD28998D3700FC94BF /* CatResponse.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +300,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007B60A42899829A00FC94BF /* ViewController.swift in Sources */,
 				007B60A02899829A00FC94BF /* AppDelegate.swift in Sources */,
+				007B60C52899831A00FC94BF /* HttpClient.swift in Sources */,
+				007B60C8289985FE00FC94BF /* CatModel.swift in Sources */,
+				007B60CA2899868200FC94BF /* CatViewController.swift in Sources */,
 				007B60A22899829A00FC94BF /* SceneDelegate.swift in Sources */,
+				007B60CD289986B300FC94BF /* CatViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007B60EC28998CFC00FC94BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				007B60FF28998D9500FC94BF /* MockHttpClient.swift in Sources */,
+				007B6103289990CD00FC94BF /* CatViewModelTest.swift in Sources */,
+				007B60FB28998D0E00FC94BF /* Mockable.swift in Sources */,
+				007B6106289997B900FC94BF /* MockUrlProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		007B60F528998CFC00FC94BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 007B609B2899829A00FC94BF /* TestableNetworkLayer */;
+			targetProxy = 007B60F428998CFC00FC94BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		007B60A52899829A00FC94BF /* Main.storyboard */ = {
@@ -336,6 +520,42 @@
 			};
 			name = Release;
 		};
+		007B60F728998CFC00FC94BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4T62J4499;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mct.TestableNetworkLayerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestableNetworkLayer.app/TestableNetworkLayer";
+			};
+			name = Debug;
+		};
+		007B60F828998CFC00FC94BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4T62J4499;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mct.TestableNetworkLayerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestableNetworkLayer.app/TestableNetworkLayer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +573,15 @@
 			buildConfigurations = (
 				007B60B12899829B00FC94BF /* Debug */,
 				007B60B22899829B00FC94BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		007B60F628998CFC00FC94BF /* Build configuration list for PBXNativeTarget "TestableNetworkLayerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007B60F728998CFC00FC94BF /* Debug */,
+				007B60F828998CFC00FC94BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
