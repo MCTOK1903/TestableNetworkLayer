@@ -17,13 +17,16 @@ protocol HttpClientProtocol {
 
 class HttpClient: HttpClientProtocol {
     
+    // MARK: Properties
     private var urlSession: URLSession
     
+    // MARK: Init
     init(urlsession: URLSession) {
         self.urlSession = urlsession
     }
     
-    func fetch<T>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) where T : Decodable, T : Encodable {
+    // MARK: Public Func
+    func fetch<T: Codable>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) {
         
         self.urlSession.dataTask(with: url, completionHandler: { data, response, error in
             

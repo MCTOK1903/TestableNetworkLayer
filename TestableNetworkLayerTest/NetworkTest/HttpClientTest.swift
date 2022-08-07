@@ -11,43 +11,47 @@ import XCTest
 class HttpClientTest: XCTestCase, Mockable {
     
     var urlSession: URLSession!
+    var httpClient: HttpClientProtocol!
+    let reqURL = URL(string: "https://api.thecatapi.com/v1/images/search")!
+    
+    
+    let mockString =
+    """
+        [
+            {
+                "id": "8on",
+                "url": "https://cdn2.thecatapi.com/images/8on.jpg",
+            }
+        ]
+    """
     
     override func setUp() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
         urlSession = URLSession(configuration: config)
+        
+        httpClient = HttpClient(urlsession: urlSession)
     }
     
-    func test_GetCat() throws {
-        let reqURL = URL(string: "https://api.thecatapi.com/v1/images/search")!
+    override func tearDown() {
+        urlSession = nil
+        httpClient = nil
+        
+        super.tearDown()
+    }
+    
+    func test_GetCat_Success() throws {
+        
         let response = HTTPURLResponse(url: reqURL,
                                        statusCode: 200,
                                        httpVersion: nil,
                                        headerFields: ["Content-Type": "application/json"])!
         
-        var mockData: Data?
-        let laodJsonExpectation = XCTestExpectation(description: "loadJson")
-        
-        loadJson(filename: "CatResponse",
-                 extensionType: .json,
-                 type: CatModel.self) { result in
-            switch result {
-            case .success(let response):
-                mockData = try? JSONEncoder().encode(response)
-                laodJsonExpectation.fulfill()
-            case .failure:
-                break
-            }
-        }
-        
-        wait(for: [laodJsonExpectation], timeout: 1)
-        
+        let mockData: Data = Data(mockString.utf8)
         
         MockURLProtocol.requestHandler = { request in
-            return (response, mockData!)
+            return (response, mockData)
         }
-        
-        let httpClient = HttpClient(urlsession: urlSession)
         
         let expectation = XCTestExpectation(description: "response")
         
@@ -68,96 +72,54 @@ class HttpClientTest: XCTestCase, Mockable {
     
     
     func test_getCat_BadResponse() throws {
-        let reqURL = URL(string: "https://api.thecatapi.com/v1/images/search")!
         let response = HTTPURLResponse(url: reqURL,
-                                       statusCode: 404,
+                                       statusCode: 400,
                                        httpVersion: nil,
                                        headerFields: ["Content-Type": "application/json"])!
         
-        var mockData: Data?
-        let laodJsonExpectation = XCTestExpectation(description: "loadJson")
-        
-        loadJson(filename: "CatResponse",
-                 extensionType: .json,
-                 type: CatModel.self) { result in
-            switch result {
-            case .success(let response):
-                mockData = try? JSONEncoder().encode(response)
-                laodJsonExpectation.fulfill()
-            case .failure:
-                break
-            }
-        }
-        
-        wait(for: [laodJsonExpectation], timeout: 1)
-        
+        let mockData: Data = Data(mockString.utf8)
         
         MockURLProtocol.requestHandler = { request in
-            return (response, mockData!)
+            return (response, mockData)
         }
-        
-        let httpClient = HttpClient(urlsession: urlSession)
         
         let expectation = XCTestExpectation(description: "response")
         
         httpClient.fetch(url: reqURL) { (response: Result<[CatModel], Error>) in
             switch response {
-            case .success(let catModel):
+            case .success:
                 XCTAssertThrowsError("Fatal Error")
-                
             case .failure(let error):
                 XCTAssertEqual(HttpError.badResponse, error as? HttpError)
                 expectation.fulfill()
             }
-            
         }
         wait(for: [expectation], timeout: 2)
     }
     
     
-    func test_getCat_EndogingError() {
-        let reqURL = URL(string: "https://api.thecatapi.com/v1/images/search")!
+    func test_GetCat_EncodingError() {
         let response = HTTPURLResponse(url: reqURL,
                                        statusCode: 200,
                                        httpVersion: nil,
                                        headerFields: ["Content-Type": "application/json"])!
         
-        var mockData: Data?
-        let laodJsonExpectation = XCTestExpectation(description: "loadJson")
-        
-        loadJson(filename: "CatResponse",
-                 extensionType: .json,
-                 type: CatModel.self) { result in
-            switch result {
-            case .success(let response):
-                mockData = try? JSONEncoder().encode(response)
-                laodJsonExpectation.fulfill()
-            case .failure:
-                break
-            }
-        }
-        
-        wait(for: [laodJsonExpectation], timeout: 1)
-        
+        let mockData: Data = Data(mockString.utf8)
         
         MockURLProtocol.requestHandler = { request in
-            return (response, mockData!)
+            return (response, mockData)
         }
-        
-        let httpClient = HttpClient(urlsession: urlSession)
         
         let expectation = XCTestExpectation(description: "response")
         
         httpClient.fetch(url: reqURL) { (response: Result<[[CatModel]], Error>) in
             switch response {
-            case .success(let catModel):
+            case .success:
                 XCTAssertThrowsError("Fatal Error")
-                
             case .failure(let error):
                 XCTAssertEqual(HttpError.errorDecodingData, error as? HttpError)
                 expectation.fulfill()
             }
-            
         }
         wait(for: [expectation], timeout: 2)
     }
