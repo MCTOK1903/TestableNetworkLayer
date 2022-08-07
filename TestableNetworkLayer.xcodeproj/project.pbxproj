@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00087CD4289EB6FC00A441E7 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00087CD3289EB6FC00A441E7 /* MockURLProtocol.swift */; };
+		00087CD6289EB7EF00A441E7 /* HttpClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00087CD5289EB7EF00A441E7 /* HttpClientTest.swift */; };
 		007B60A02899829A00FC94BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B609F2899829A00FC94BF /* AppDelegate.swift */; };
 		007B60A22899829A00FC94BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60A12899829A00FC94BF /* SceneDelegate.swift */; };
 		007B60A72899829A00FC94BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007B60A52899829A00FC94BF /* Main.storyboard */; };
@@ -20,7 +22,7 @@
 		007B60FD28998D3700FC94BF /* CatResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 007B60FC28998D3700FC94BF /* CatResponse.json */; };
 		007B60FF28998D9500FC94BF /* MockHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B60FE28998D9500FC94BF /* MockHttpClient.swift */; };
 		007B6103289990CD00FC94BF /* CatViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B6102289990CD00FC94BF /* CatViewModelTest.swift */; };
-		007B6106289997B900FC94BF /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B6105289997B900FC94BF /* MockUrlProtocol.swift */; };
+		00C36015289FA009005F15FD /* CatModelTwo.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C36014289FA009005F15FD /* CatModelTwo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00087CD3289EB6FC00A441E7 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		00087CD5289EB7EF00A441E7 /* HttpClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTest.swift; sourceTree = "<group>"; };
 		007B609C2899829A00FC94BF /* TestableNetworkLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableNetworkLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007B609F2899829A00FC94BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007B60A12899829A00FC94BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +54,7 @@
 		007B60FC28998D3700FC94BF /* CatResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CatResponse.json; sourceTree = "<group>"; };
 		007B60FE28998D9500FC94BF /* MockHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHttpClient.swift; sourceTree = "<group>"; };
 		007B6102289990CD00FC94BF /* CatViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModelTest.swift; sourceTree = "<group>"; };
-		007B6105289997B900FC94BF /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
+		00C36014289FA009005F15FD /* CatModelTwo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CatModelTwo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 			children = (
 				007B60FA28998D0E00FC94BF /* Mockable.swift */,
 				007B60FC28998D3700FC94BF /* CatResponse.json */,
+				00C36014289FA009005F15FD /* CatModelTwo.json */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -193,7 +198,8 @@
 		007B61042899978900FC94BF /* NetworkTest */ = {
 			isa = PBXGroup;
 			children = (
-				007B6105289997B900FC94BF /* MockUrlProtocol.swift */,
+				00087CD3289EB6FC00A441E7 /* MockURLProtocol.swift */,
+				00087CD5289EB7EF00A441E7 /* HttpClientTest.swift */,
 			);
 			path = NetworkTest;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				007B60FD28998D3700FC94BF /* CatResponse.json in Resources */,
+				00C36015289FA009005F15FD /* CatModelTwo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,9 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				007B60FF28998D9500FC94BF /* MockHttpClient.swift in Sources */,
+				00087CD4289EB6FC00A441E7 /* MockURLProtocol.swift in Sources */,
+				00087CD6289EB7EF00A441E7 /* HttpClientTest.swift in Sources */,
 				007B6103289990CD00FC94BF /* CatViewModelTest.swift in Sources */,
 				007B60FB28998D0E00FC94BF /* Mockable.swift in Sources */,
-				007B6106289997B900FC94BF /* MockUrlProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

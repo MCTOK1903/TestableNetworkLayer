@@ -17,9 +17,15 @@ protocol HttpClientProtocol {
 
 class HttpClient: HttpClientProtocol {
     
+    private var urlSession: URLSession
+    
+    init(urlsession: URLSession) {
+        self.urlSession = urlsession
+    }
+    
     func fetch<T>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) where T : Decodable, T : Encodable {
         
-        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+        self.urlSession.dataTask(with: url, completionHandler: { data, response, error in
             
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 completion(.failure(HttpError.badResponse))
@@ -34,5 +40,6 @@ class HttpClient: HttpClientProtocol {
             
             completion(.success(object))
         })
+        .resume()
     }
 }

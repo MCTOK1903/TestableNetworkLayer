@@ -52,5 +52,4 @@ extension CatViewModelTest: CatViewModelOutput {
         XCTAssertNotNil(error)
         fetchedWithErrorExpectation.fulfill()
     }
-
 }
